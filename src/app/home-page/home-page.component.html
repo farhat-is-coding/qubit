@@ -1,0 +1,73 @@
+<nav class="bg-emerald-300 py-6">
+    <h1 class="text-4xl text-white font-bold text-center">Qubitrix</h1>
+</nav>
+
+<div class="min-h-screen bg-blue-300">
+    <h1 class="text-6xl text-white font-bold text-center">INTRO</h1>
+</div>
+
+
+
+
+<div class="min-h-screen bg-img flex flex-col items-center ">
+
+    <div class="glass w-full flex flex-col items-center bg-gray-400 py-4">
+      <h2 class="text-4xl text-white font-bold">Gates</h2>
+  
+      <div
+        cdkDropListOrientation="horizontal"
+        cdkDropList
+        #gatesList="cdkDropList"
+        [cdkDropListData]="gates"
+        [cdkDropListConnectedTo]="[rowOne, rowTwo]"
+        class="flex gates"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="w-24 h-24 rounded-lg bg-emerald-300 mx-4 
+        flex justify-center items-center" *ngFor="let item of gates" cdkDrag>
+          <h1 class="text-white text-3xl ">{{ item }}</h1>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-3/4">
+      <h2>Qubit 1</h2>
+  
+      <div
+        cdkDropListOrientation="horizontal"
+        cdkDropList
+        #rowOne="cdkDropList"
+        [cdkDropListData]="row1"
+        [cdkDropListConnectedTo]="[gatesList, rowTwo]"
+        class=" flex flex-wrap gates"
+        (cdkDropListDropped)="drop($event)"
+      >
+      <div class="w-24 h-24 rounded-lg bg-emerald-300 mx-4 
+      flex justify-center items-center" *ngFor="let item of row1" cdkDrag>
+        <h1 class="text-white text-3xl ">{{ item }}</h1>
+        
+      </div>
+      </div>
+    </div>
+  
+    <div class="w-3/4">
+      <h2>Qubit 2</h2>
+  
+      <div
+        cdkDropListOrientation="horizontal"
+        cdkDropList
+        #rowTwo="cdkDropList"
+        [cdkDropListData]="row2"
+        [cdkDropListConnectedTo]="[gatesList, rowOne]"
+        class=" flex flex-wrap gates"
+        (cdkDropListDropped)="drop($event)"
+      >
+      <div class="w-24 h-24 rounded-lg bg-emerald-300 mx-4 
+      flex justify-center items-center" *ngFor="let item of row2" cdkDrag>
+        <h1 class="text-white text-3xl ">{{ item }}</h1>
+        
+      </div>
+      </div>
+    </div>
+</div>
