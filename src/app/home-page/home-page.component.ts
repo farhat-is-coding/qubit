@@ -15,7 +15,8 @@ import {
 })
 export class HomePageComponent {
   gates = ['x', 'y', 'z', 'not'];
-
+  qubit1 = 0
+  qubit2 = 0
   row1 = [''];
   row2 = [''];
 
