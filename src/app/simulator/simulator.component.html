@@ -1,0 +1,74 @@
+<div class="min-h-screen bg-img flex flex-col">
+    <div class="glass w-full flex flex-col items-center bg-color py-4">
+      <h2 class="text-4xl text-white font-bold mb-2">Gates</h2>
+  
+      <div
+        cdkDropListOrientation="horizontal"
+        cdkDropList
+        #gatesList="cdkDropList"
+        [cdkDropListData]="gates"
+        [cdkDropListConnectedTo]="[rowOne, rowTwo]"
+        class="flex gates"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div
+          class="w-24 h-24 rounded-lg box-color mx-4 flex justify-center items-center"
+          *ngFor="let item of gates"
+          cdkDrag
+        >
+          <h1 class=" text-3xl">{{ item }}</h1>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-3/4 bg-color my-2 rounded-md flex items-center">
+      <button class="text-5xl text-white ml-2" (click)="qubit1 == 0? qubit1=1: qubit1=0;" >
+        |{{qubit1}}>
+  
+      </button>
+  
+      <div
+        cdkDropListOrientation="horizontal"
+        cdkDropList
+        #rowOne="cdkDropList"
+        [cdkDropListData]="row1"
+        [cdkDropListConnectedTo]="[gatesList, rowTwo]"
+        class="flex flex-wrap gates w-full"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div
+          class="w-24 h-24 rounded-lg box-color mx-4 flex justify-center items-center"
+          *ngFor="let item of row1"
+          [ngClass]="item == ''? 'opacity-0': '' "
+          cdkDrag
+        >
+          <h1 class=" text-3xl">{{ item }}</h1>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w-3/4 bg-color rounded-md flex items-center">
+      <button class="text-5xl text-white ml-2" (click)="qubit2 == 0? qubit2=1: qubit2=0;" >|{{qubit2}}></button>
+  
+      <div
+        cdkDropListOrientation="horizontal"
+        cdkDropList
+        #rowTwo="cdkDropList"
+        [cdkDropListData]="row2"
+        [cdkDropListConnectedTo]="[gatesList, rowOne]"
+        class="flex flex-wrap gates w-full"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div
+          class="w-24 h-24 rounded-lg box-color mx-4 flex justify-center items-center"
+          *ngFor="let item of row2"
+          cdkDrag
+          [ngClass]="item == ''? 'opacity-0': '' "
+  
+        >
+          <h1 class=" text-3xl">{{ item }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  

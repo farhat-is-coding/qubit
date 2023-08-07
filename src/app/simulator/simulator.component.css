@@ -1,0 +1,19 @@
+.cdk-drag-animating {
+  transition: transform 300ms ease;
+}
+
+.gates.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 300ms ease;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+}
+
+.bg-color {
+  background-color: rgb(58, 71, 74);
+}
+
+.box-color {
+  background-color: rgb(237, 241, 248);
+}
