@@ -12,9 +12,10 @@ import { SuccessBannerComponent } from './success-banner/success-banner.componen
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SupportComponent } from './support/support.component'; // Import BrowserAnimationsModule
 
-
+import { FormsModule } from '@angular/forms'; // Import the FormsModule
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     HeroComponent,
     SimulatorComponent,
     SuccessBannerComponent,
-    HowItWorksComponent
+    HowItWorksComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
