@@ -1,0 +1,51 @@
+<div class="min-h-screen bg-color py-10 px-20">
+  <h1 class="text-center text-3xl font-medium pb-10">How it works</h1>
+
+  <div
+    class="bg-white p-10 w-full h-full grid grid-cols-10 text-gray-600 rounded-md"
+  >
+    <div class="flex flex-col col-span-3 max-md:col-span-10">
+      <div
+        (click)="active = 1;imgSrc = imgUrls[0]"
+        class="m-4 p-4 rounded-md cursor-pointer transition duration-500 ease-in-out"
+        [ngClass]="active == 1 ? 'bg-box text-white' : 'bg-gray-200'"
+      >
+        <h1 class="text-2xl font-semibold">Sign Up</h1>
+        <p class="text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <div
+        (click)="active = 2; imgSrc = imgUrls[1]"
+        class="bg-blue-400 m-4 p-4 rounded-md cursor-pointer transition duration-500 ease-in-out"
+        [ngClass]="active == 2 ? 'bg-box text-white' : 'bg-gray-200'"
+      >
+        <h1 class="text-2xl font-semibold">Get Access</h1>
+        <p class="text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+      <div
+        (click)="active = 3; imgSrc = imgUrls[2]"
+        class="m-4 p-4 rounded-md cursor-pointer transition duration-500 ease-in-out"
+        [ngClass]="active == 3 ? 'bg-box text-white' : 'bg-gray-200'"
+      >
+        <h1 class="text-2xl font-semibold">Enjoy</h1>
+        <p class="text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-span-7 max-md:col-span-10 rounded-lg">
+      <img
+        class="w-screen h-96 mt-3 object-cover rounded-lg scale-95
+         hover:scale-100 transition duration-500 ease-in-out animate-shake"
+        [src]="imgUrls[active - 1]"
+        alt=""
+        [@imageAnimation]="imgSrc"
+
+      />
+    </div>
+  </div>
+</div>

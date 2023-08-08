@@ -1,0 +1,46 @@
+.bg-color {
+  background-color: rgb(237, 241, 248);
+}
+
+.bg-box {
+  background-color: rgb(44, 102, 184);
+}
+
+:host {
+  /* Define the desired color for the background when active */
+  --tw-bg-box: rgb(44, 102, 184);
+  --tw-bg-gray-200: #edf2f7;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+.animate-shake{
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+.animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1);
+}

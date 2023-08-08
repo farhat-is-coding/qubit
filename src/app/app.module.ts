@@ -8,6 +8,13 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeroComponent } from './hero/hero.component';
 import { SimulatorComponent } from './simulator/simulator.component';
+import { SuccessBannerComponent } from './success-banner/success-banner.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+
+
 
 @NgModule({
   declarations: [
@@ -15,12 +22,15 @@ import { SimulatorComponent } from './simulator/simulator.component';
     HomePageComponent,
     NavbarComponent,
     HeroComponent,
-    SimulatorComponent
+    SimulatorComponent,
+    SuccessBannerComponent,
+    HowItWorksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DragDropModule
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
