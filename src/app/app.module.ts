@@ -15,7 +15,8 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SupportComponent } from './support/support.component'; // Import BrowserAnimationsModule
 
-import { FormsModule } from '@angular/forms'; // Import the FormsModule
+import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component'; // Import the FormsModule
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms'; // Import the FormsModule
     SimulatorComponent,
     SuccessBannerComponent,
     HowItWorksComponent,
-    SupportComponent
+    SupportComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
